@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "sourceUrl": "https://www.canva.com/en_au/",
+    "extractedAt": "2026-11-18T00:00:00.000Z",
+    "defaultMode": "light",
+    "darkDetection": "none",
+    "themeStrategy": "both"
+  },
+  "shared": {
+    "font": {
+      "family": {
+        "sans": {
+          "value": ["Open Sans", "system-ui", "sans-serif"],
+          "confidence": "high",
+          "raw": "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700 (blocked-client HTML)"
+        }
+      },
+      "size": {
+        "body": { "value": "1rem", "confidence": "medium" },
+        "h1": { "value": "3rem", "confidence": "medium" }
+      },
+      "weight": {
+        "regular": { "value": 400, "confidence": "high" },
+        "semibold": { "value": 600, "confidence": "high" },
+        "bold": { "value": 700, "confidence": "high" }
+      }
+    },
+    "space": {
+      "8": { "value": "8px", "confidence": "medium" },
+      "16": { "value": "16px", "confidence": "medium" },
+      "24": { "value": "24px", "confidence": "medium" }
+    },
+    "radius": {
+      "sm": { "value": "4px", "confidence": "medium" },
+      "md": { "value": "8px", "confidence": "medium" },
+      "lg": { "value": "16px", "confidence": "medium" }
+    },
+    "shadow": {
+      "card": {
+        "value": "0 2px 8px rgba(13, 18, 22, 0.12)",
+        "confidence": "medium"
+      }
+    }
+  },
+  "modes": {
+    "light": {
+      "color": {
+        "background": { "value": "#ffffff", "confidence": "high" },
+        "surface": { "value": "#f8f9fb", "confidence": "medium" },
+        "text": { "value": "#0d1216", "confidence": "high" },
+        "text-muted": { "value": "#5e6a76", "confidence": "medium" },
+        "primary": {
+          "value": "#7d2ae7",
+          "confidence": "high",
+          "raw": "Canva newsroom: turquoise-to-purple gradient endpoint"
+        },
+        "primary-contrast": { "value": "#ffffff", "confidence": "high" },
+        "secondary": {
+          "value": "#00c4cc",
+          "confidence": "high",
+          "raw": "Canva newsroom gradient start (cyan)"
+        },
+        "link": { "value": "#8b3dff", "confidence": "medium" },
+        "border": { "value": "#e8eaed", "confidence": "medium" },
+        "focus-ring": { "value": "#7d2ae7", "confidence": "medium" }
+      }
+    },
+    "dark": {
+      "color": {
+        "background": { "value": "#1b1f23", "confidence": "medium" },
+        "surface": { "value": "#252a30", "confidence": "low" },
+        "text": { "value": "#f1f3f5", "confidence": "medium" },
+        "text-muted": { "value": "#9aa5b1", "confidence": "low" },
+        "primary": { "value": "#9b66ff", "confidence": "medium" },
+        "primary-contrast": { "value": "#0d1216", "confidence": "medium" },
+        "secondary": { "value": "#00c4cc", "confidence": "medium" },
+        "link": { "value": "#b18cff", "confidence": "low" },
+        "border": { "value": "#3d454d", "confidence": "low" },
+        "focus-ring": { "value": "#9b66ff", "confidence": "low" }
+      }
+    }
+  },
+  "candidates": {
+    "light": [
+      {
+        "role": "accent-blue",
+        "value": "#3969e7",
+        "confidence": "medium",
+        "reason": "Third-party brand palette mid-stop; not verified on live marketing CSS"
+      }
+    ],
+    "dark": [
+      {
+        "role": "surface",
+        "value": "#252a30",
+        "confidence": "low",
+        "reason": "Dark UI not exposed on marketing site; editor-adjacent guess"
+      },
+      {
+        "role": "text-muted",
+        "value": "#9aa5b1",
+        "confidence": "low",
+        "reason": "No dark marketing theme detected (darkDetection: none)"
+      }
+    ]
+  }
+}

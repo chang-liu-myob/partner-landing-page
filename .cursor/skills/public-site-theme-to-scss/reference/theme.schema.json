@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://partner-landing-page/theme.schema.json",
+  "title": "Partner landing theme",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["meta", "shared", "modes", "candidates"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceUrl", "extractedAt", "defaultMode", "darkDetection"],
+      "properties": {
+        "sourceUrl": { "type": "string", "format": "uri" },
+        "extractedAt": { "type": "string", "format": "date-time" },
+        "defaultMode": { "type": "string", "enum": ["light", "dark"] },
+        "darkDetection": {
+          "type": "string",
+          "enum": [
+            "css-media",
+            "class-data-theme",
+            "browser-toggle",
+            "manual-only",
+            "none"
+          ]
+        },
+        "themeStrategy": {
+          "type": "string",
+          "enum": ["data-theme", "prefers-color-scheme", "both"],
+          "default": "both"
+        }
+      }
+    },
+    "shared": {
+      "type": "object",
+      "properties": {
+        "font": { "$ref": "#/$defs/fontBlock" },
+        "space": { "$ref": "#/$defs/stringTokenMap" },
+        "radius": { "$ref": "#/$defs/stringTokenMap" },
+        "shadow": { "$ref": "#/$defs/stringTokenMap" },
+        "fontWeight": { "$ref": "#/$defs/numberTokenMap" }
+      },
+      "additionalProperties": false
+    },
+    "modes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["light", "dark"],
+      "properties": {
+        "light": { "$ref": "#/$defs/modeBlock" },
+        "dark": { "$ref": "#/$defs/modeBlock" }
+      }
+    },
+    "candidates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["light", "dark"],
+      "properties": {
+        "light": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/candidate" }
+        },
+        "dark": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/candidate" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "tokenString": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "confidence"],
+      "properties": {
+        "value": { "type": "string" },
+        "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+        "raw": { "type": "string" }
+      }
+    },
+    "tokenStringList": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "confidence"],
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+        "raw": { "type": "string" }
+      }
+    },
+    "tokenNumber": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "confidence"],
+      "properties": {
+        "value": { "type": "number" },
+        "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+        "raw": { "type": "string" }
+      }
+    },
+    "stringTokenMap": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/tokenString" }
+    },
+    "numberTokenMap": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/tokenNumber" }
+    },
+    "fontBlock": {
+      "type": "object",
+      "properties": {
+        "family": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/tokenStringList" }
+        },
+        "size": { "$ref": "#/$defs/stringTokenMap" },
+        "weight": { "$ref": "#/$defs/numberTokenMap" }
+      },
+      "additionalProperties": false
+    },
+    "colorBlock": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "$ref": "#/$defs/tokenString" }
+    },
+    "modeBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "color": { "$ref": "#/$defs/colorBlock" }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "value", "confidence", "reason"],
+      "properties": {
+        "role": { "type": "string" },
+        "value": { "type": "string" },
+        "confidence": { "type": "string", "enum": ["low", "medium"] },
+        "reason": { "type": "string" }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "properties": {
+        "modes": {
+          "properties": {
+            "light": {
+              "properties": {
+                "color": {
+                  "required": ["background", "text"],
+                  "properties": {
+                    "background": { "$ref": "#/$defs/tokenString" },
+                    "text": { "$ref": "#/$defs/tokenString" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

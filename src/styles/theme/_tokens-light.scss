@@ -1,0 +1,21 @@
+/* Generated from theme.json — do not edit; re-run compile-theme.mjs */
+$color-background: #ffffff !default;
+$color-text: #0d1216 !default;
+$color-text-muted: #5e6a76 !default;
+$color-primary: #7d2ae7 !default;
+$color-primary-contrast: #ffffff !default;
+$color-secondary: #00c4cc !default;
+$color-link: #8b3dff !default;
+$color-border: #e8eaed !default;
+$color-focus-ring: #7d2ae7 !default;
+$colors: (
+  'background': $color-background,
+  'text': $color-text,
+  'text-muted': $color-text-muted,
+  'primary': $color-primary,
+  'primary-contrast': $color-primary-contrast,
+  'secondary': $color-secondary,
+  'link': $color-link,
+  'border': $color-border,
+  'focus-ring': $color-focus-ring
+);

@@ -1,69 +1,153 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import { partnerLandingContent } from "@/data/partner-landing";
+import { landing as s } from "./landing.styles";
+import "./partner-landing.scss";
+
+export const metadata: Metadata = {
+  title: "Join MYOB — offer for Canva users | MYOB Australia",
+  description:
+    "Mock partner landing: Canva users in Australia can join MYOB Business with an exclusive partner offer.",
+};
 
 export default function Home() {
+  const {
+    host,
+    hero,
+    offer,
+    audienceStrip,
+    featuresSection,
+    features,
+    stepsSection,
+    steps,
+    testimonial,
+    finalCta,
+    footer,
+  } = partnerLandingContent;
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className={s.page}>
+      <a className={s.skipLink} href="#main">
+        Skip to main content
+      </a>
+
+      <header className={s.hostBar}>
+        <a className={s.hostBrand} href={host.siteUrl}>
+          {host.name}
+          <span className={s.hostBadge}>{host.headerBadge}</span>
+        </a>
+        <a className={s.hostSignIn} href={host.signInUrl}>
+          {host.signInLabel}
+        </a>
+      </header>
+
+      <p className={s.partnerStrip}>{audienceStrip}</p>
+
+      <section className={s.hero} aria-labelledby="hero-heading">
+        <div className={s.heroInner}>
+          <div>
+            <span className={s.eyebrow}>{hero.eyebrow}</span>
+            <h1 className={s.heroTitle} id="hero-heading">
+              {hero.headline}
+            </h1>
+            <p className={s.heroLead}>{hero.subheadline}</p>
+            <div className={s.ctaRow}>
+              <a className={s.btnPrimary} href={hero.primaryCta.href}>
+                {hero.primaryCta.label}
+              </a>
+              <a className={s.btnSecondary} href={hero.secondaryCta.href}>
+                {hero.secondaryCta.label}
+              </a>
+            </div>
+          </div>
+
+          <aside className={s.offerCard} aria-labelledby="offer-title">
+            <span className={s.offerBadge}>{offer.badge}</span>
+            <h2 className={s.offerTitle} id="offer-title">
+              {offer.title}
+            </h2>
+            <p className={s.offerBody}>{offer.description}</p>
+            <p className={s.offerMeta}>
+              {offer.eligibility}
+              <br />
+              <strong>{offer.expiresLabel}</strong>
+            </p>
+          </aside>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
+      </section>
+
+      <main id="main">
+        <section
+          id="features"
+          className={`${s.section} ${s.sectionAlt}`}
+          aria-labelledby="features-heading"
+        >
+          <h2 className={s.sectionTitle} id="features-heading">
+            {featuresSection.title}
+          </h2>
+          <p className={s.sectionLead}>{featuresSection.lead}</p>
+          <div className={s.featureGrid}>
+            {features.map((feature) => (
+              <article key={feature.title} className={s.featureCard}>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className={s.section} aria-labelledby="steps-heading">
+          <h2 className={s.sectionTitle} id="steps-heading">
+            {stepsSection.title}
+          </h2>
+          <p className={s.sectionLead}>{stepsSection.lead}</p>
+          <ol className={s.steps}>
+            {steps.map((step) => (
+              <li key={step.step} className={s.stepCard}>
+                <span className={s.stepNumber} aria-hidden="true">
+                  {step.step}
+                </span>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section className={`${s.section} ${s.sectionAlt}`}>
+          <blockquote>
+            <p className={s.quote}>{testimonial.quote}</p>
+            <footer className={s.quoteAttrib}>
+              — {testimonial.attribution}, {testimonial.role}
+            </footer>
+          </blockquote>
+        </section>
+
+        <section
+          className={s.finalCta}
+          aria-labelledby="final-cta-heading"
+        >
+          <h2 className={s.sectionTitle} id="final-cta-heading">
+            {finalCta.headline}
+          </h2>
+          <p className={s.sectionLead}>{finalCta.body}</p>
+          <a className={s.btnPrimary} href={finalCta.href}>
+            {finalCta.buttonLabel}
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </section>
       </main>
+
+      <footer className={s.footer}>
+        <div className={s.footerInner}>
+          <p>{footer.disclaimer}</p>
+          <ul className={s.footerLinks}>
+            {footer.links.map((link) => (
+              <li key={link.label}>
+                <a href={link.href}>{link.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </footer>
     </div>
   );
 }

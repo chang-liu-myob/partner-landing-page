@@ -1,0 +1,28 @@
+/* Generated from theme.json — do not edit; re-run compile-theme.mjs */
+
+@use 'tokens-light' as light;
+@use 'tokens-dark' as dark;
+
+:root, [data-theme='light'] {
+  --color-background: #{light.$color-background};
+  --color-text: #{light.$color-text};
+  --color-text-muted: #{light.$color-text-muted};
+  --color-primary: #{light.$color-primary};
+  --color-primary-contrast: #{light.$color-primary-contrast};
+  --color-secondary: #{light.$color-secondary};
+  --color-link: #{light.$color-link};
+  --color-border: #{light.$color-border};
+  --color-focus-ring: #{light.$color-focus-ring};
+}
+
+[data-theme='dark'] {
+  --color-primary-contrast: #{dark.$color-primary-contrast};
+  --color-secondary: #{dark.$color-secondary};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-primary-contrast: #{dark.$color-primary-contrast};
+    --color-secondary: #{dark.$color-secondary};
+  }
+}

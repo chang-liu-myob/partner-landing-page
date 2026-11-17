@@ -1,0 +1,17 @@
+/* Generated from theme.json — do not edit; re-run compile-theme.mjs */
+@use 'shared' as s;
+
+@mixin text-body {
+  font-family: s.$font-family-sans, system-ui, sans-serif;
+  font-size: s.$font-size-body;
+  font-weight: s.$font-weight-regular;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+@mixin heading-1 {
+  font-size: s.$font-size-h1;
+  font-weight: s.$font-weight-bold;
+  color: var(--color-text);
+  line-height: 1.2;
+}

@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "sourceUrl": "https://example.com",
+    "extractedAt": "2026-11-18T00:00:00.000Z",
+    "defaultMode": "light",
+    "darkDetection": "css-media",
+    "themeStrategy": "both"
+  },
+  "shared": {
+    "font": {
+      "family": {
+        "sans": {
+          "value": ["Inter", "system-ui", "sans-serif"],
+          "confidence": "high"
+        }
+      },
+      "size": {
+        "body": { "value": "1rem", "confidence": "medium" },
+        "h1": { "value": "2.5rem", "confidence": "medium" }
+      },
+      "weight": {
+        "regular": { "value": 400, "confidence": "high" },
+        "bold": { "value": 700, "confidence": "high" }
+      }
+    },
+    "space": {
+      "8": { "value": "8px", "confidence": "high" },
+      "16": { "value": "16px", "confidence": "high" }
+    },
+    "radius": {
+      "md": { "value": "8px", "confidence": "medium" }
+    }
+  },
+  "modes": {
+    "light": {
+      "color": {
+        "background": { "value": "#ffffff", "confidence": "high" },
+        "text": { "value": "#1a1a1a", "confidence": "high" },
+        "primary": { "value": "#0066cc", "confidence": "high" },
+        "primary-contrast": { "value": "#ffffff", "confidence": "medium" },
+        "link": { "value": "#0066cc", "confidence": "medium" }
+      }
+    },
+    "dark": {
+      "color": {
+        "background": { "value": "#0f0f0f", "confidence": "medium" },
+        "text": { "value": "#f5f5f5", "confidence": "medium" },
+        "primary": { "value": "#4da3ff", "confidence": "low" }
+      }
+    }
+  },
+  "candidates": {
+    "light": [],
+    "dark": [
+      {
+        "role": "primary",
+        "value": "#4da3ff",
+        "confidence": "low",
+        "reason": "Inferred from light primary; confirm with live dark UI"
+      }
+    ]
+  }
+}

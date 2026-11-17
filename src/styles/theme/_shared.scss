@@ -1,0 +1,30 @@
+/* Generated from theme.json — do not edit; re-run compile-theme.mjs */
+
+@use 'sass:map';
+
+$font-family-sans: 'Open Sans', system-ui, sans-serif !default;
+$font-size-body: 1rem !default;
+$font-size-h1: 3rem !default;
+$font-weight-regular: 400 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$space-8: 8px !default;
+$space-16: 16px !default;
+$space-24: 24px !default;
+$radius-sm: 4px !default;
+$radius-md: 8px !default;
+$radius-lg: 16px !default;
+$shadow-card: 0 2px 8px rgba(13, 18, 22, 0.12) !default;
+
+
+$space-scale: (
+  '8': $space-8,
+  '16': $space-16,
+  '24': $space-24
+);
+
+$radius-scale: (
+  'sm': $radius-sm,
+  'md': $radius-md,
+  'lg': $radius-lg
+);
