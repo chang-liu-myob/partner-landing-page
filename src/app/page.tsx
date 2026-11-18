@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { MyobLogo } from "@/components/MyobLogo";
 import { partnerLandingContent } from "@/data/partner-landing";
 import { landing as s } from "./landing.styles";
 import "./partner-landing.scss";
@@ -31,12 +32,13 @@ export default function Home() {
       </a>
 
       <header className={s.hostBar}>
-        <a className={s.hostBrand} href={host.siteUrl}>
-          {host.name}
+        <a
+          className={s.hostBrand}
+          href={host.siteUrl}
+          aria-label={host.name}
+        >
+          <MyobLogo className={s.hostLogo} aria-hidden />
           <span className={s.hostBadge}>{host.headerBadge}</span>
-        </a>
-        <a className={s.hostSignIn} href={host.signInUrl}>
-          {host.signInLabel}
         </a>
       </header>
 

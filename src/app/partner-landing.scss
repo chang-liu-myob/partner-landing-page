@@ -43,14 +43,18 @@ $surface: #f8f9fb;
   display: flex;
   align-items: center;
   gap: t.$space-8;
-  font-weight: t.$font-weight-bold;
-  letter-spacing: 0.04em;
   text-decoration: none;
   color: inherit;
 
   &:hover {
     color: var(--color-secondary);
   }
+}
+
+.hostLogo {
+  display: block;
+  height: 1.5rem;
+  width: auto;
 }
 
 .hostBadge {
@@ -60,20 +64,6 @@ $surface: #f8f9fb;
   font-weight: t.$font-weight-semibold;
   font-size: 0.75rem;
   text-transform: uppercase;
-}
-
-.hostSignIn {
-  font-weight: t.$font-weight-semibold;
-  color: #fff;
-  text-decoration: none;
-  padding: t.$space-8 t.$space-16;
-  border-radius: t.$radius-md;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-
-  &:hover {
-    border-color: var(--color-secondary);
-    color: var(--color-secondary);
-  }
 }
 
 .partnerStrip {

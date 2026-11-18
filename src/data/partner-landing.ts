@@ -13,8 +13,6 @@ export type PartnerLandingContent = {
   host: {
     name: string;
     siteUrl: string;
-    signInLabel: string;
-    signInUrl: string;
     headerBadge: string;
   };
   partner: {
@@ -64,13 +62,13 @@ export type PartnerLandingContent = {
   };
 };
 
+const MYOB_PRICING_URL = "https://www.myob.com/au/pricing";
+
 /** Mock content — Canva users joining MYOB (AU), MYOB site + Canva theme. */
 export const partnerLandingContent: PartnerLandingContent = {
   host: {
     name: "MYOB",
     siteUrl: "https://www.myob.com/au",
-    signInLabel: "Already with MYOB? Sign in",
-    signInUrl: "https://www.myob.com/au/login",
     headerBadge: "× Canva",
   },
   partner: {
@@ -86,7 +84,7 @@ export const partnerLandingContent: PartnerLandingContent = {
       "Join MYOB to handle GST, invoicing, and cash flow while you keep creating in Canva — one partner offer, built for freelancers and small teams who live in both tools.",
     primaryCta: {
       label: "Join MYOB",
-      href: "https://www.myob.com/au",
+      href: MYOB_PRICING_URL,
     },
     secondaryCta: {
       label: "Compare plans",
@@ -158,7 +156,7 @@ export const partnerLandingContent: PartnerLandingContent = {
     headline: "Ready to join MYOB?",
     body: "Start with your Canva account. Cancel or change plan any time within MYOB account settings.",
     buttonLabel: "Join MYOB with Canva",
-    href: "https://www.myob.com/au",
+    href: MYOB_PRICING_URL,
   },
   footer: {
     disclaimer:
