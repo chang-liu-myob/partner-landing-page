@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:gh-pages": "GITHUB_PAGES=true NODE_ENV=production next build",
+    "preview:gh-pages": "node scripts/preview-gh-pages.mjs",
     "start": "next start",
     "lint": "eslint"
   },
