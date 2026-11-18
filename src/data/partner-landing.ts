@@ -13,7 +13,6 @@ export type PartnerLandingContent = {
   host: {
     name: string;
     siteUrl: string;
-    headerBadge: string;
   };
   partner: {
     name: string;
@@ -69,7 +68,6 @@ export const partnerLandingContent: PartnerLandingContent = {
   host: {
     name: "MYOB",
     siteUrl: "https://www.myob.com/au",
-    headerBadge: "× Canva",
   },
   partner: {
     name: "Canva",

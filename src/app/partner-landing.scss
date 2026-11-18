@@ -31,7 +31,7 @@ $surface: #f8f9fb;
 .hostBar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: t.$space-16;
   padding: t.$space-8 t.$space-24;
   background: #0d1216;
@@ -39,10 +39,15 @@ $surface: #f8f9fb;
   font-size: 0.875rem;
 }
 
+.hostBarBrand {
+  display: flex;
+  align-items: center;
+  gap: t.$space-16;
+}
+
 .hostBrand {
   display: flex;
   align-items: center;
-  gap: t.$space-8;
   text-decoration: none;
   color: inherit;
 
@@ -57,13 +62,24 @@ $surface: #f8f9fb;
   width: auto;
 }
 
-.hostBadge {
-  padding: 2px t.$space-8;
-  border-radius: t.$radius-sm;
-  background: rgba(255, 255, 255, 0.12);
+.hostPartnership {
+  margin: 0;
+  padding-left: t.$space-16;
+  border-left: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 0.8125rem;
+  font-weight: t.$font-weight-regular;
+  line-height: 1.25;
+  color: rgba(241, 243, 245, 0.88);
+}
+
+.hostPartnershipLead {
+  font-weight: t.$font-weight-regular;
+  color: rgba(241, 243, 245, 0.65);
+}
+
+.hostPartnershipName {
   font-weight: t.$font-weight-semibold;
-  font-size: 0.75rem;
-  text-transform: uppercase;
+  color: #f1f3f5;
 }
 
 .partnerStrip {

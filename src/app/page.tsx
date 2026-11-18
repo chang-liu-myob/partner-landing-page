@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 export default function Home() {
   const {
     host,
+    partner,
     hero,
     offer,
     audienceStrip,
@@ -32,14 +33,22 @@ export default function Home() {
       </a>
 
       <header className={s.hostBar}>
-        <a
-          className={s.hostBrand}
-          href={host.siteUrl}
-          aria-label={host.name}
-        >
-          <MyobLogo className={s.hostLogo} aria-hidden />
-          <span className={s.hostBadge}>{host.headerBadge}</span>
-        </a>
+        <div className={s.hostBarBrand}>
+          <a
+            className={s.hostBrand}
+            href={host.siteUrl}
+            aria-label={host.name}
+          >
+            <MyobLogo className={s.hostLogo} aria-hidden />
+          </a>
+          <div
+            className={s.hostPartnership}
+            aria-label={`In partnership with ${partner.name}`}
+          >
+            <span className={s.hostPartnershipLead}>with</span>{" "}
+            <span className={s.hostPartnershipName}>{partner.name}</span>
+          </div>
+        </div>
       </header>
 
       <p className={s.partnerStrip}>{audienceStrip}</p>
